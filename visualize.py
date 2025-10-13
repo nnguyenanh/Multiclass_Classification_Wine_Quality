@@ -157,14 +157,12 @@ def generatePath(file_name: str) -> str:
     return path
     
 
-    
-
 if __name__ == '__main__':
     df = pd.read_csv(generatePath(PATH_DATA_RAW))
     plotQualityCount(df)    
     plotFeaturesVsQuality(df)
     plotCorrelationMatrix(df)
     plotOutliers(df)
-    # preprocessData(df)
+
     
     
