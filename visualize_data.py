@@ -7,29 +7,18 @@ import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 import numpy as np
 
+# USER-DEFINED LIBRARIES
+
 # CONSTANT VARIABLES
 PATH_DATA_RAW = 'data_folder/winequality-red-raw.csv'
-PATH_DATA_PREPROCESSED = 'data_folder/winequality-red-preprocessed.csv'
 
-PATH_ANALYSIS_OUTLIER = 'analysis/outlier.png'
-PATH_ANALYSIS_FEATURES_VS_QUALITY = 'analysis/features_vs_quality.png'
-PATH_ANALYSIS_QUALITY_COUNT = 'analysis/quality_count.png'
-PATH_ANALYSIS_HEATMAP = 'analysis/heatmap.png'
+PATH_ANALYSIS_OUTLIER = 'data_visualization/outlier.png'
+PATH_ANALYSIS_FEATURES_VS_QUALITY = 'data_visualization/features_vs_quality.png'
+PATH_ANALYSIS_QUALITY_COUNT = 'data_visualization/quality_count.png'
+PATH_ANALYSIS_HEATMAP = 'data_visualization/heatmap.png'
 
 
-def preprocessData(df: pd.DataFrame, file_name=PATH_DATA_PREPROCESSED):
-    
-    # detect outliers
-    plotOutliers(df)
-    
-    # detect irrelevant features
-    # dropIrrelevantFeatures(df)
-    
-    df.to_csv(generatePath(file_name), index=False)
-    print(f'Preprocessed data saved to: {generatePath(file_name)}')
-    
-    
-def plotOutliers(df: pd.DataFrame, file_name=PATH_DATA_PREPROCESSED) -> int:
+def plotOutliers(df: pd.DataFrame) -> int:
     
     fig, axes = plt.subplots(4, 3, figsize=(12, 8))
     axes: np.ndarray[Axes]
@@ -147,8 +136,7 @@ def plotCorrelationMatrix(df: pd.DataFrame, file_name=PATH_ANALYSIS_HEATMAP):
     plt.close()
     print(f'CORRELATION HEATMAP saved to: {generatePath(file_name)}')
             
-            
-            
+     
 
 def generatePath(file_name: str) -> str:
     # get current path and concatnate with parameter
