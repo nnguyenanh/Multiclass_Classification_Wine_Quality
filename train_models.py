@@ -61,7 +61,8 @@ def load_model(path):
     print(f'Model loaded from {path}')
     return model
 
-def main():
+#hello
+if __name__ == '__main__':
     df = pd.read_csv(generatePath(PATH_DATA_PREPROCESSED))
     X = df.drop(columns='quality_class')
     y = df['quality_class']
@@ -79,8 +80,3 @@ def main():
         else:
             score = model.score(X_test, y_test)
         print(f'Score {name}: {score:.4f}')
-
-
-
-if __name__ == '__main__':
-    main()

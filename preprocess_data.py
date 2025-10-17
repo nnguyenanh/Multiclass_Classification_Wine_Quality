@@ -19,7 +19,7 @@ def preprocessData():
     df_preprocessed['total_acidity'] = df_preprocessed['fixed acidity'] + df_preprocessed['volatile acidity'] + df_preprocessed['citric acid']
     df_preprocessed['acidity_ratio'] = df_preprocessed['fixed acidity'] / (df_preprocessed['volatile acidity'] + 0.01)
     
-    # Sulfur dioxide features
+    # # Sulfur dioxide features
     df_preprocessed['free_sulfur_ratio'] = df_preprocessed['free sulfur dioxide'] / (df_preprocessed['total sulfur dioxide'] + 0.01)
     df_preprocessed['sulfur_dioxide_diff'] = df_preprocessed['total sulfur dioxide'] - df_preprocessed['free sulfur dioxide']
     
